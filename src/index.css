@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.container-title{
+    font-size: 28px;
+    color: midnightblue;
+}
+.highlighted {
+    background-color: red;
+}
+.table{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+thead{
+    background-color: cornflowerblue;
+}
+.rowsSum{
+    background-color: cornflowerblue;
+}
+.box{
+    padding: 50px;
+}
+.addRowBtn{
+    margin-top: 50px;
+}
+tr{
+    padding: 12px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+td, th{
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid black;
+}
+th{
+    border: 1px solid black;
+    background-color: cornflowerblue;
+}
+.table_th-averageSum{
+    background-color: #278866;
+}
+.table_td-averageSum{
+    background-color: #48be95;
+}
+.increaseBtn{
+    margin-left: 8px;
+    cursor: pointer;
+}
