@@ -1,9 +1,21 @@
 .container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+}
+.table-container {
+    max-width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+.table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 .container-title{
     font-size: 28px;
@@ -11,11 +23,6 @@
 }
 .highlighted {
     background-color: red;
-}
-.table{
-    width: 100%;
-    border: 1px solid black;
-    border-collapse: collapse;
 }
 thead{
     background-color: cornflowerblue;
@@ -25,6 +32,15 @@ thead{
 }
 .box{
     padding: 50px;
+}
+.table-settings{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+ input{
+    margin-left: 10px;
 }
 .addRowBtn{
     margin-top: 50px;
