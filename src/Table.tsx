@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import { Cell, generateInitialTableData, generateRandomCellValue } from './helpers/hepler'
 import './index.css'
 import {TableContent} from "./components/tableContent";
@@ -7,7 +7,7 @@ const Table = () => {
   const [mnx, setMNX] = useState<{ M: any; N: any; X: any }>({ M: null, N: null, X: null })
   const [tableData, setTableData] = useState<Cell[][]>([])
 
-  const createTable = useCallback((event: any) => {
+  const createTable = useCallback((event: React.FormEvent) => {
       event.preventDefault()
 
       setTableData(generateInitialTableData(parseInt(mnx.M, 10), parseInt(mnx.N, 10)))
@@ -61,7 +61,6 @@ const Table = () => {
         })
     }
 
-
     return (
       <div className={'box'}>
         <div className={'container'}>
@@ -105,7 +104,6 @@ const Table = () => {
           <div className={'table-container'}>
             <TableContent
                 tableData={tableData}
-                mnx={mnx}
                 handleMouseOverCell={handleMouseOverCell}
                 increaseCellValue={increaseCellValue}
                 removeRow={removeRow}

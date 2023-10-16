@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from "react";
 import { Cell } from "../helpers/hepler";
 
-export const TableContent = ({ mnx, tableData, handleMouseOverCell, increaseCellValue, removeRow }: any) => {
+export const TableContent = ({ tableData, handleMouseOverCell, increaseCellValue, removeRow }: any) => {
     const [hoveredRowIndex, setHoveredRowIndex] = useState<number | null>(null)
 
     const calculateRowSum = (row: Cell[]): number => {
@@ -22,14 +22,14 @@ export const TableContent = ({ mnx, tableData, handleMouseOverCell, increaseCell
             <thead>
             <tr>
                 <td>&nbsp;</td>
-                {Array.from({ length: parseInt(mnx.N, 10) }).map((_, colIndex) => (
+                {(tableData[0] || []).map((cell: Cell, colIndex: number) => (
                     <th key={colIndex}>Cell values N = {colIndex + 1}</th>
                 ))}
                 <th>Sum Values</th>
             </tr>
             </thead>
             <tbody>
-            {tableData.map((row: any, rowIndex: number) => (
+            {tableData.map((row: Cell[], rowIndex: number) => (
                 <tr key={rowIndex}>
                     <th key={rowIndex}>Cell values M = {rowIndex + 1}</th>
                     {row.map((cell: Cell, colIndex: number) => (
@@ -58,13 +58,9 @@ export const TableContent = ({ mnx, tableData, handleMouseOverCell, increaseCell
                     </td>
                 </tr>
             ))}
-
-
-
-
             <tr>
                 <th className={'table_th-averageSum'}>Average sum</th>
-                {Array.from({ length: parseInt(mnx.N, 10) }).map((_, colIndex) => (
+                {(tableData[0] || []).map((row: Cell, colIndex: number) => (
                     <td key={colIndex} className={'table_td-averageSum'}>{calculateColumnAverage(colIndex)}</td>
                 ))}
             </tr>
